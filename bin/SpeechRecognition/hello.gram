@@ -6,4 +6,4 @@
 
 grammar hello;
 
-public <greet> = (Hello);
+public <greet> = (hello);

@@ -42,7 +42,7 @@ public class SpeechRecognition {
 				System.out.println(resultText);
 				if(resultText.toLowerCase().equals("hello")){
 					try {
-						File f = new File("audio\\nope.mp3");
+						File f = new File("src\\audio\\nope.mp3");
 						FileInputStream fls = new FileInputStream(f);
 						BufferedInputStream bls = new BufferedInputStream(fls);
 						
