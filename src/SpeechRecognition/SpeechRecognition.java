@@ -40,9 +40,9 @@ public class SpeechRecognition {
 			if (result != null){
 				String resultText = result.getBestFinalResultNoFiller();
 				System.out.println(resultText);
-				if(resultText.toLowerCase().equals("i love you")){
+				if(resultText.toLowerCase().equals("hello")){
 					try {
-						File f = new File("C:\\Users\\Yoshi\\workspace\\Speech Recognition\\src\\audio\\nein.mp3");
+						File f = new File("audio\\nope.mp3");
 						FileInputStream fls = new FileInputStream(f);
 						BufferedInputStream bls = new BufferedInputStream(fls);
 						
