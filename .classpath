@@ -2,7 +2,7 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Sphinx4.10beta4"/>
-	<classpathentry kind="lib" path="C:/Users/Yoshi/workspace/Emotibear/lib/jl1.0.1.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Sphinx 4.10beta4"/>
+	<classpathentry kind="lib" path="C:/Users/Fellner/workspace/Emotibear/lib/jl1.0.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

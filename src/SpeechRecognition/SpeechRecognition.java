@@ -1,22 +1,13 @@
 package SpeechRecognition;
 
 
-import java.io.BufferedInputStream;
-import java.io.File;
-import java.io.FileInputStream;
-
 import edu.cmu.sphinx.frontend.util.Microphone;
 import edu.cmu.sphinx.recognizer.Recognizer;
 import edu.cmu.sphinx.result.Result;
 import edu.cmu.sphinx.util.props.ConfigurationManager;
 
-import javax.sound.sampled.AudioInputStream;
-import javax.sound.sampled.AudioSystem;
-import javax.sound.sampled.Clip;
-
-import javazoom.jl.player.Player;
-
 public class SpeechRecognition {
+
 	public SpeechRecognition(String[] args) {
 		ConfigurationManager cm;
 		if (args.length > 0) {
@@ -31,10 +22,9 @@ public class SpeechRecognition {
 		if (!microphone.startRecording())
 		{
 			recognizer.deallocate();
-			System.exit(1);
+			System.exit(0);
 		}
-		while(true)
-		{
+		while(true){
 
 			Result result = recognizer.recognize();
 			if (result != null){
@@ -42,12 +32,19 @@ public class SpeechRecognition {
 				System.out.println(resultText);
 				if(resultText.toLowerCase().equals("hello")){
 					try {
-						File f = new File("src\\audio\\nope.mp3");
-						FileInputStream fls = new FileInputStream(f);
-						BufferedInputStream bls = new BufferedInputStream(fls);
-						
-						Player p = new Player(bls);
-						p.play();
+						Process p;
+						p = Runtime.getRuntime().exec("aplay /home/pi/ralph.wav");
+						p.waitFor();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+				
+				if(resultText.toLowerCase().equals("Sasha")){
+					try {
+						Process p;
+						p = Runtime.getRuntime().exec("aplay /home/pi/ralph.wav");
+						p.waitFor();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -55,7 +52,7 @@ public class SpeechRecognition {
 			}
 		}
 	}
-	
+
 	public static void main(String[] args){
 		new SpeechRecognition(args);
 	}
