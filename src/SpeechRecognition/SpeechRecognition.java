@@ -57,7 +57,7 @@ public class SpeechRecognition {
 				}else if(resultText.toLowerCase().equals("whats your name")){
 					try {
 						Process p;
-						p = Runtime.getRuntime().exec("aplay /home/pi/ralph.wav");
+						p = Runtime.getRuntime().exec("aplay /home/pi/sounds/name.wav");
 						p.waitFor();
 					} catch (Exception e) {
 						e.printStackTrace();
@@ -65,9 +65,8 @@ public class SpeechRecognition {
 				}else if(resultText.toLowerCase().equals("bye")){
 					try {
 						Process p;
-						//p = Runtime.getRuntime().exec("aplay /home/pi/bye.wav");
-						//p.waitFor();
-						System.out.println(resultText);
+						p = Runtime.getRuntime().exec("aplay /home/pi/sounds/bye.wav");
+						p.waitFor();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
