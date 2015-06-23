@@ -33,18 +33,41 @@ public class SpeechRecognition {
 				if(resultText.toLowerCase().equals("hello")){
 					try {
 						Process p;
+						p = Runtime.getRuntime().exec("aplay /home/pi/sounds/hello.wav");
+						p.waitFor();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}else if(resultText.toLowerCase().equals("how are you")){
+					try {
+						Process p;
+						p = Runtime.getRuntime().exec("aplay /home/pi/sounds/good.wav");
+						p.waitFor();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}else if(resultText.toLowerCase().equals("whats going on")){
+					try {
+						Process p;
+						p = Runtime.getRuntime().exec("aplay /home/pi/sounds/nothing.wav");
+						p.waitFor();
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}else if(resultText.toLowerCase().equals("whats your name")){
+					try {
+						Process p;
 						p = Runtime.getRuntime().exec("aplay /home/pi/ralph.wav");
 						p.waitFor();
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
-				}
-				
-				if(resultText.toLowerCase().equals("Sasha")){
+				}else if(resultText.toLowerCase().equals("bye")){
 					try {
 						Process p;
-						p = Runtime.getRuntime().exec("aplay /home/pi/ralph.wav");
-						p.waitFor();
+						//p = Runtime.getRuntime().exec("aplay /home/pi/bye.wav");
+						//p.waitFor();
+						System.out.println(resultText);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
